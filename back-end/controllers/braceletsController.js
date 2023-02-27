@@ -1,8 +1,23 @@
-const { getBracelet, createBracelet } = require("../queries/bracelets");
+const express = require("express");
+const bracelets = express.Router();
+const {
+  getAllBracelets,
+  getBracelet,
+  createBracelet,
+} = require("../queries/bracelets");
 
-bracelets.get("/:bracelet_id", async (req, res) => {
-  const { bracelet_id } = req.params;
-  const bracelet = await getBracelet(bracelet_id);
+bracelets.get("/", async (req, res) => {
+  const allBracelets = await getAllBracelets();
+  if (allBracelets[0]) {
+    res.status(200).json(allBracelets);
+  } else {
+    res.status(500).json({ error: "server error" });
+  }
+});
+
+bracelets.get("/:id", async (req, res) => {
+  const { id } = req.params;
+  const bracelet = await getBracelet(id);
   if (bracelet) {
     res.json(bracelet);
   } else {
@@ -18,3 +33,5 @@ bracelets.post("/", async (req, res) => {
     res.status(400).json({ error: e });
   }
 });
+
+module.exports = bracelets;

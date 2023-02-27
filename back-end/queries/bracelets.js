@@ -1,8 +1,19 @@
-const getBracelet = async (bracelet_id) => {
+const db = require("../db/dbConfig.js");
+
+const getAllBracelets = async () => {
+  try {
+    const allBracelets = await db.any("SELECT * FROM bracelets");
+    return allBracelets;
+  } catch (e) {
+    return e;
+  }
+};
+
+const getBracelet = async (id) => {
   try {
     const oneBracelet = await db.one(
       "SELECT * FROM bracelets WHERE id=$1",
-      bracelet_id
+      id
     );
     return oneBracelet;
   } catch (e) {
@@ -29,6 +40,7 @@ const createBracelet = async (bracelet) => {
 };
 
 module.exports = {
+  getAllBracelets,
   getBracelet,
   createBracelet,
 };
