@@ -11,10 +11,7 @@ const getAllBracelets = async () => {
 
 const getBracelet = async (id) => {
   try {
-    const oneBracelet = await db.one(
-      "SELECT * FROM bracelets WHERE id=$1",
-      id
-    );
+    const oneBracelet = await db.one("SELECT * FROM bracelets WHERE id=$1", id);
     return oneBracelet;
   } catch (e) {
     return e;
