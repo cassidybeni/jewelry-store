@@ -6,7 +6,7 @@ CREATE DATABASE jewelry_dev;
 CREATE TABLE bracelets (
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL,
-    image BYTEA NOT NULL,
+    image TEXT,
     description TEXT NOT NULL,
     details TEXT[] NOT NULL,
     price TEXT NOT NULL

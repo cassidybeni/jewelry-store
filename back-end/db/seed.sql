@@ -1,7 +1,7 @@
 \c jewelry_dev;
 
 INSERT INTO bracelets (name, image, description, details, price) VALUES
-('Vine Hinged Bangle', pg_read_binary_file('assets/bangle1.jpg'), 'Inspired by the natural world, Tiffany Victoria designs capture the fluid movement of flowers, vines and leaves with a mix of expertly cut diamonds. This hinged bangle is crafted of 18k gold that features a contrast of high polish and sandblasted finishes. Round brilliant diamonds set in an alternating pattern play off the light and accentuate the vine motif. When too many diamonds are never enough, Tiffany Victoria is the ultimate way to shine. Wear this bangle on its own or paired with your favorite diamond tennis bracelet for sparkle you can’t ignore.', ARRAY['18k yellow gold with round brilliant diamonds', 'Size medium', 'Fits wrists up to 6.25"', 'Carat total weight .46', 'Product number:69524346'], '$10,200');
+('Vine Hinged Bangle', 'https://ibb.co/z7wkH1T', 'Inspired by the natural world, Tiffany Victoria designs capture the fluid movement of flowers, vines and leaves with a mix of expertly cut diamonds. This hinged bangle is crafted of 18k gold that features a contrast of high polish and sandblasted finishes. Round brilliant diamonds set in an alternating pattern play off the light and accentuate the vine motif. When too many diamonds are never enough, Tiffany Victoria is the ultimate way to shine. Wear this bangle on its own or paired with your favorite diamond tennis bracelet for sparkle you can’t ignore.', ARRAY['18k yellow gold with round brilliant diamonds', 'Size medium', 'Fits wrists up to 6.25"', 'Carat total weight .46', 'Product number:69524346'], '$10,200');
 
 
    
