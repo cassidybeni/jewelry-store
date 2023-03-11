@@ -4,6 +4,8 @@ const {
   getAllBracelets,
   getBracelet,
   createBracelet,
+  deleteBracelet,
+  updateBracelet,
 } = require("../queries/bracelets");
 
 bracelets.get("/", async (req, res) => {
@@ -32,6 +34,22 @@ bracelets.post("/", async (req, res) => {
   } catch (e) {
     res.status(400).json({ error: e });
   }
+});
+
+bracelets.delete("/:id", async (req, res) => {
+  const { id } = req.params;
+  const deletedBracelet = await deleteBracelet(id);
+  if (deletedBracelet.id) {
+    res.status(200).json(deletedBracelet);
+  } else {
+    res.status(404).json("Bracelet does not exist.");
+  }
+});
+
+bracelets.put("/:id", async (req, res) => {
+  const { id } = req.params;
+  const updatedBracelet = await updateBracelet(id, req.body);
+  res.status(200).json(updatedBracelet);
 });
 
 module.exports = bracelets;
