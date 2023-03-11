@@ -51,7 +51,7 @@ const deleteBracelet = async (id) => {
 const updateBracelet = async (id, bracelet) => {
   try {
     const updatedBracelet = await db.one(
-      "UPDATE bracelet SET name=$1, image=$2, description=$3, details=$4, price=$5 WHERE id=$6 RETURNING *",
+      "UPDATE bracelets SET name=$1, image=$2, description=$3, details=$4, price=$5 WHERE id=$6 RETURNING *",
       [
         bracelet.name,
         bracelet.image,
