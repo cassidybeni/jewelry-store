@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function BraceletDetails() {
-  return (
-    <div>BraceletDetails</div>
-  )
+  return <div>BraceletDetails</div>;
 }
 
-export default BraceletDetails
+export default BraceletDetails;
