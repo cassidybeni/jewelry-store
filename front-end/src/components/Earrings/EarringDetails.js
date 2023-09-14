@@ -6,7 +6,7 @@ import "../Details.css";
 
 const API = process.env.REACT_APP_API;
 
-function EarringDetails() {
+function EarringDetails({ addToCart }) {
   const [earring, setEarring] = useState([]);
   const { id } = useParams();
 
@@ -20,6 +20,11 @@ function EarringDetails() {
         console.error(e);
       });
   }, [id]);
+
+  const handleAddToCart = () => {
+    addToCart(earring);
+  };
+
   return (
     <div className="product-container">
       <div className="image-container">
@@ -29,7 +34,7 @@ function EarringDetails() {
         <h2>{earring.name}</h2>
         <hr></hr>
         <h3>Description & Details</h3>
-        <p>{earring.description}</p>
+        <p className="description">{earring.description}</p>
         {earring.details && (
           <ul>
             {earring.details.map((detail, i) => (
@@ -37,7 +42,7 @@ function EarringDetails() {
             ))}
           </ul>
         )}
-        <button className="addToCart-btn">
+        <button className="addToCart-btn" onClick={handleAddToCart}>
           {" "}
           <span>{earring.price}</span>
         </button>
