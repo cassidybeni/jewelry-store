@@ -5,7 +5,11 @@
 
 [Back-end](https://jewelry-store-of44.onrender.com/)
 
-<img src="./assets/IMG_8579.PNG" height="500" />
-
+## Index Page
 ![Rings](./assets/rings.png)
+
+## Show Page
 ![Details](./assets/details.png)
+
+## Mobile View
+<img src="./assets/IMG_8579.PNG" height="500" />
