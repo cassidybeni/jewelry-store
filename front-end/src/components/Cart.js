@@ -1,4 +1,5 @@
 import React from "react";
+import numeral from 'numeral'
 import "./Cart.css";
 
 function Cart({ cartItems, clearCart }) {
@@ -35,10 +36,10 @@ function Cart({ cartItems, clearCart }) {
       <div className="order-summary">
         <h3>Order Summary</h3>
         <div>
-          <div>Subtotal: ${subtotal.toFixed(2)}</div>
-          <div>Tax: ${tax.toFixed(2)}</div>
+          <div>Subtotal: ${numeral(subtotal).format("0,0.00")}</div>
+          <div>Tax: ${numeral(tax).format("0,0.00")}</div>
           <hr></hr>
-          <div>Total: ${total.toFixed(2)}</div>
+          <div>Total: ${numeral(total).format("0,0.00")}</div>
         </div>
       </div>
     </div>
