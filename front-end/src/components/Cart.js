@@ -29,7 +29,7 @@ function Cart({ cartItems, clearCart }) {
         <div>Tax: ${tax.toFixed(2)}</div>
         <div>Total: ${total.toFixed(2)}</div>
       </div>
-      <button onClick={clearCart}>Empty Bag</button>
+      <button className="empty-bag-btn" onClick={clearCart}>Empty Bag</button>
     </div>
   );
 }
