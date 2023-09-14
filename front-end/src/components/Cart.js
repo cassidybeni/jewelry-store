@@ -16,20 +16,31 @@ function Cart({ cartItems, clearCart }) {
 
   return (
     <div className="cart">
-      <h2>Shopping Bag</h2>
-      <ul>
-        {cartItems.map((item, index) => (
-          <li key={index}>
-            {item.name} - {item.price}
-          </li>
-        ))}
-      </ul>
-      <div>
-        <div>Subtotal: ${subtotal.toFixed(2)}</div>
-        <div>Tax: ${tax.toFixed(2)}</div>
-        <div>Total: ${total.toFixed(2)}</div>
+      <div className="bag-items">
+        <h2 className="shopping-cart-heading">Shopping Bag</h2>
+        <ul>
+          {cartItems.map((item, index) => (
+            <li key={index}>
+              <img src={item.image} alt={item.name}></img>
+              <p>{item.name}</p>
+              <p>{item.price}</p>
+            </li>
+          ))}
+        </ul>
+        <button className="empty-bag-btn" onClick={clearCart}>
+          Empty Bag
+        </button>
       </div>
-      <button className="empty-bag-btn" onClick={clearCart}>Empty Bag</button>
+
+      <div className="order-summary">
+        <h3>Order Summary</h3>
+        <div>
+          <div>Subtotal: ${subtotal.toFixed(2)}</div>
+          <div>Tax: ${tax.toFixed(2)}</div>
+          <hr></hr>
+          <div>Total: ${total.toFixed(2)}</div>
+        </div>
+      </div>
     </div>
   );
 }

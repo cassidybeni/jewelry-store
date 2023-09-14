@@ -71,6 +71,7 @@ h3 {
   color: #ffdeb8;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   background-color: black;
+  border-radius: 2px;
   height: 40px;
   width: 50%;
   font-weight: bolder;

@@ -20,8 +20,6 @@ a:link {
   font-size: 14px;
   color: white;
   padding: 0px 30px;
-  word-wrap: normal;
-  display: inline-block;
   font-weight: bolder;
 }
 
@@ -31,12 +29,13 @@ a:hover {
 }
 
 .nav-container {
-  z-index: 1;
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  margin-top: 20px;
+  background-color: #000000;
+  z-index: 100;
+  padding: 10px 0;
 }
 
 .main-header {
@@ -53,13 +52,7 @@ a:hover {
 
 .nav-container:hover {
   background-color: #080808;
-  color: black;
   border-top: 1px solid lightgrey;
   opacity: 0.7;
 }
 
-@media screen and (max-width: 768px) {
-  .navbar {
-    display: none;
-  }
-}
