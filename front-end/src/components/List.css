@@ -1,0 +1,80 @@
+.column {
+  float: left;
+  width: 30%;
+  box-sizing: border-box;
+  padding: 0 16px;
+  position: relative;
+}
+
+.column img {
+  height: 50%;
+  display: block;
+  margin-bottom: 50%;
+  box-shadow: none;
+  margin-left: 25%;
+  padding-top: 10%;
+}
+
+.row {
+  margin: 0 -16px;
+  overflow: hidden;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 350px;
+  height: 350px;
+  text-align: center;
+  background-color: #ffff;
+  position: relative;
+  left: 50%;
+  margin-top: 100%;
+}
+
+.product-name {
+  color: black;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: large;
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.addToCart-btn-list:hover span {
+  display: none;
+}
+
+.addToCart-btn-list:hover:before {
+  content: "Add To Bag";
+}
+
+.addToCart-btn-list {
+  color: #ffdeb8;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: black;
+  height: 40px;
+  width: 50%;
+  font-weight: bolder;
+  font-size: 16px;
+  border: none;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}

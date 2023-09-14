@@ -1,0 +1,65 @@
+.navbar {
+  z-index: 2;
+  position: absolute;
+  top: 70%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a:visited {
+  color: white;
+}
+
+a:link {
+  text-decoration: none;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 14px;
+  color: white;
+  padding: 0px 30px;
+  word-wrap: normal;
+  display: inline-block;
+  font-weight: bolder;
+}
+
+a:hover {
+  text-decoration: underline 2px;
+  text-underline-offset: 5px;
+}
+
+.nav-container {
+  z-index: 1;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.main-header {
+  z-index: 1;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 50px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.nav-container:hover {
+  background-color: #080808;
+  color: black;
+  border-top: 1px solid lightgrey;
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
+}

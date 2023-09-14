@@ -1,0 +1,25 @@
+.Four0Four-img {
+  height: 50%;
+  margin-top: 40%;
+}
+
+.heading {
+  font-size: 120px;
+  color: #dcdcdc;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  margin-top: 50%;
+  margin-bottom: 26%;
+  padding-bottom: 0%;
+}
+
+.heading-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  text-align: center;
+}
+
+.Four0Four-page {
+  background-color: #bbb3b3;
+}
