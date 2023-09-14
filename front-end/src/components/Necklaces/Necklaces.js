@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Necklace from "./Necklace";
+import Necklace from "./Necklace"
 import axios from "axios";
 import '../List.css'
 const API = process.env.REACT_APP_API;

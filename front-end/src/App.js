@@ -2,13 +2,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import BraceletsShow from "./Pages/Bracelets/Show";
 import EarringsShow from "./Pages/Earrings/Show";
-import NecklacesShow from "./Pages/Necklaces/Show";
+import NecklaceIndex from "./Pages/Necklaces/Index";
 import RingsDetails from "../src/components/Rings/RingsDetails";
 import WatchesDetails from "../src/components/Watches/WatchesDetails";
 import RingsIndex from "./Pages/Rings/Index";
 import BraceletsIndex from "./Pages/Bracelets/Index";
 import EarringsIndex from "./Pages/Earrings/Index";
-import NecklacesIndex from "./Pages/Necklaces/Index";
+import NecklaceDetails from "../src/components/Necklaces/NecklaceDetails";
 import WatchesIndex from "./Pages/Watches/Index";
 import Four0Four from "./Pages/Four0Four/Four0Four";
 import NavBar from "./components/NavBar/NavBar";
@@ -47,7 +47,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/bracelets/:id" element={<BraceletsShow />} />
           <Route path="/earrings/:id" element={<EarringsShow />} />
-          <Route path="/necklaces/:id" element={<NecklacesShow />} />
+          <Route path="/necklaces" element={<NecklaceIndex />} />
           <Route
             path="/rings/:id"
             element={<RingsDetails addToCart={addToCart} />}
@@ -59,7 +59,10 @@ function App() {
           <Route path="/rings" element={<RingsIndex />} />
           <Route path="/bracelets" element={<BraceletsIndex />} />
           <Route path="/earrings" element={<EarringsIndex />} />
-          <Route path="/necklaces" element={<NecklacesIndex />} />
+          <Route
+            path="/necklaces/:id"
+            element={<NecklaceDetails addToCart={addToCart} />}
+          />
           <Route path="/watches" element={<WatchesIndex />} />
           <Route
             path="/cart"

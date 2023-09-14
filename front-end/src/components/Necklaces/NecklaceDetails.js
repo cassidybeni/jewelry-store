@@ -6,7 +6,7 @@ import "../Details.css";
 
 const API = process.env.REACT_APP_API;
 
-function NecklaceDetails() {
+function NecklaceDetails({ addToCart }) {
   const [necklace, setNecklace] = useState([]);
   const { id } = useParams();
 
@@ -21,6 +21,10 @@ function NecklaceDetails() {
       });
   }, [id]);
 
+  const handleAddToCart = () => {
+    addToCart(necklace);
+  };
+
   return (
     <div className="product-container">
       <div className="image-container">
@@ -30,7 +34,7 @@ function NecklaceDetails() {
         <h2>{necklace.name}</h2>
         <hr></hr>
         <h3>Description & Details</h3>
-        <p>{necklace.description}</p>
+        <p className="description">{necklace.description}</p>
         {necklace.details && (
           <ul>
             {necklace.details.map((detail, i) => (
@@ -38,7 +42,7 @@ function NecklaceDetails() {
             ))}
           </ul>
         )}
-        <button className="addToCart-btn">
+        <button className="addToCart-btn" onClick={handleAddToCart}>
           {" "}
           <span>{necklace.price}</span>
         </button>

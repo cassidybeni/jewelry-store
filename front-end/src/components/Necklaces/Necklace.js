@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Necklace({ necklace }) {
   return (
-    <div className="column">
+      <div className="column">
       <Link to={`/necklaces/${necklace.id}`}>
         <div className="card">
           <img src={necklace.image} alt={necklace.name} />
@@ -14,8 +14,8 @@ function Necklace({ necklace }) {
             <span>{necklace.price}</span>
           </button>
         </div>
-      </Link>
-    </div>
+        </Link>
+      </div>
   );
 }
 
