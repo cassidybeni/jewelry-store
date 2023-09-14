@@ -1,13 +1,13 @@
 .Four0Four-img {
   height: 50%;
   margin-top: 40%;
+  box-shadow: none;
 }
 
 .heading {
   font-size: 120px;
-  color: #dcdcdc;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  color: #000000;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   margin-top: 50%;
   margin-bottom: 26%;
   padding-bottom: 0%;
@@ -20,6 +20,3 @@
   text-align: center;
 }
 
-.Four0Four-page {
-  background-color: #bbb3b3;
-}
