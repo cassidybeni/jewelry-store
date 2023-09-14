@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Watch from "./Watch";
 import axios from "axios";
-import "../List.css";
+import '../List.css'
 const API = process.env.REACT_APP_API;
 
 function Watches() {

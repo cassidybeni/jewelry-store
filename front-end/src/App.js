@@ -4,7 +4,7 @@ import BraceletsShow from "./Pages/Bracelets/Show";
 import EarringsShow from "./Pages/Earrings/Show";
 import NecklacesShow from "./Pages/Necklaces/Show";
 import RingsDetails from "../src/components/Rings/RingsDetails";
-import WatchesShow from "./Pages/Watches/Show";
+import WatchesDetails from "../src/components/Watches/WatchesDetails";
 import RingsIndex from "./Pages/Rings/Index";
 import BraceletsIndex from "./Pages/Bracelets/Index";
 import EarringsIndex from "./Pages/Earrings/Index";
@@ -36,8 +36,8 @@ function App() {
   }, [cartItems]);
 
   const clearCart = () => {
-    setCartItems([])
-  }
+    setCartItems([]);
+  };
 
   return (
     <div>
@@ -52,13 +52,19 @@ function App() {
             path="/rings/:id"
             element={<RingsDetails addToCart={addToCart} />}
           />
-          <Route path="/watches/:id" element={<WatchesShow />} />
+          <Route
+            path="/watches/:id"
+            element={<WatchesDetails addToCart={addToCart} />}
+          />
           <Route path="/rings" element={<RingsIndex />} />
           <Route path="/bracelets" element={<BraceletsIndex />} />
           <Route path="/earrings" element={<EarringsIndex />} />
           <Route path="/necklaces" element={<NecklacesIndex />} />
           <Route path="/watches" element={<WatchesIndex />} />
-          <Route path="/cart" element={<Cart cartItems={cartItems} clearCart={clearCart} />} />
+          <Route
+            path="/cart"
+            element={<Cart cartItems={cartItems} clearCart={clearCart} />}
+          />
           <Route path="*" element={<Four0Four />} />
         </Routes>
       </Router>
