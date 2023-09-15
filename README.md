@@ -6,10 +6,10 @@
 [Back-end](https://jewelry-store-of44.onrender.com/)
 
 ## Index Page
-![Index](./assets/rings.png)
+![Index](./assets/earrings.png)
 
 ## Show Page
-![Details](./assets/details.png)
+![Details](./assets/necklace.png)
 
 ## Checkout Page
 ![Checkout](./assets/checkout.png)
