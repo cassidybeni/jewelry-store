@@ -52,7 +52,7 @@
 }
 
 .addToCart-btn-list:hover:before {
-  content: "Add To Bag";
+  content: "View Details";
 }
 
 .addToCart-btn-list {
