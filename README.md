@@ -5,6 +5,9 @@
 
 [Back-end](https://jewelry-store-of44.onrender.com/)
 
+## Home Page
+![Home](./assets/homepage.gif)
+
 ## Index Page
 ![Index](./assets/earrings.png)
 
