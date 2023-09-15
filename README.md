@@ -12,7 +12,7 @@
 ![Index](./assets/earrings.png)
 
 ## Show Page
-![Details](./assets/necklace.png)
+![Details](./assets/ring.png)
 
 ## Checkout Page
 ![Checkout](./assets/checkout.png)
