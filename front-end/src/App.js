@@ -15,6 +15,8 @@ import NavBar from "./components/NavBar/NavBar";
 import { LoadingProvider } from "./components/Loading/LoadingContext";
 import Cart from "./components/Cart";
 import Loading from "./components/Loading/Loading";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useState, useEffect } from "react";
 
 function App() {
@@ -56,6 +58,7 @@ function App() {
         {isLoading ? (
           <Loading />
         ) : (
+          <>
           <Router>
             <NavBar></NavBar>
             <Routes>
@@ -92,6 +95,8 @@ function App() {
               <Route path="*" element={<Four0Four />} />
             </Routes>
           </Router>
+          <ToastContainer />
+          </>
         )}
       </LoadingProvider>
     </div>

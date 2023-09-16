@@ -1,15 +1,18 @@
 import React from "react";
-import numeral from 'numeral'
+import numeral from "numeral";
 import "./Cart.css";
 
 function Cart({ cartItems, clearCart }) {
   let subtotal = 0;
-  for (const item of cartItems) {
-    let removeDollarSign = item.price.replace("$", "");
+  let item = { cartItems };
+  if (item && item.price) {
+    let removeDollarSign = cartItems.item.price.replace("$", "");
     let removeComma = removeDollarSign.replace(",", "");
     let price = parseFloat(removeComma);
 
-    subtotal += parseFloat(price);
+    if (!isNaN(price)) {
+      subtotal += parseFloat(price);
+    }
   }
 
   let tax = subtotal * 0.08875;
