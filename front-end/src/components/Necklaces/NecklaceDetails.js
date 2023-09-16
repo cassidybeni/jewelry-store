@@ -1,6 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 import axios from "axios";
 import "../Details.css";
 
@@ -21,8 +23,17 @@ function NecklaceDetails({ addToCart }) {
       });
   }, [id]);
 
+  const notify = () => {
+    toast.success("Added to bag!", {
+      position: "top-right",
+      autoClose: 3000,
+      theme: "light",
+    });
+  };
+
   const handleAddToCart = () => {
     addToCart(necklace);
+    notify()
   };
 
   return (

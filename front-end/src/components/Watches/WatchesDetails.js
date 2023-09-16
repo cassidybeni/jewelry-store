@@ -2,6 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "../Details.css";
 
 const API = process.env.REACT_APP_API;
@@ -21,8 +23,17 @@ function WatchDetails({ addToCart }) {
       });
   }, [id]);
 
+  const notify = () => {
+    toast.success("Added to bag!", {
+      position: "top-right",
+      autoClose: 3000,
+      theme: "light",
+    });
+  };
+
   const handleAddToCart = () => {
     addToCart(watch);
+    notify()
   };
 
   return (
