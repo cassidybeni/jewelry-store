@@ -28,6 +28,7 @@ function NecklaceDetails({ addToCart }) {
       position: "top-right",
       autoClose: 3000,
       theme: "light",
+      hideProgressBar: "true",
     });
   };
 

@@ -26,8 +26,9 @@ function RingsDetails({ addToCart }) {
   const notify = () => {
     toast.success("Added to bag!", {
       position: "top-right",
-      autoClose: 3000,
+      autoClose: 2000,
       theme: "light",
+      hideProgressBar: "true",
     });
   };
 
