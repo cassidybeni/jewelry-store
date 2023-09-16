@@ -12,11 +12,14 @@ import EarringDetails from "../src/components/Earrings/EarringDetails";
 import BraceletsDetails from "../src/components/Bracelets/BraceletDetails";
 import Four0Four from "./Pages/Four0Four/Four0Four";
 import NavBar from "./components/NavBar/NavBar";
+import { LoadingProvider } from "./components/Loading/LoadingContext";
 import Cart from "./components/Cart";
+import Loading from "./components/Loading/Loading";
 import { useState, useEffect } from "react";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const addToCart = (item) => {
     setCartItems([...cartItems, item]);
@@ -39,44 +42,58 @@ function App() {
     setCartItems([]);
   };
 
+  useEffect(() => {
+    // Simulate loading data for 3 seconds
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+  }, []);
+
+  //Wrap entire app with the LoadingProvider
   return (
     <div>
-      <Router>
-        <NavBar></NavBar>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/bracelets/:id"
-            element={<BraceletsDetails addToCart={addToCart} />}
-          />
-          <Route path="/necklaces" element={<NecklaceIndex />} />
-          <Route
-            path="/rings/:id"
-            element={<RingsDetails addToCart={addToCart} />}
-          />
-          <Route
-            path="/watches/:id"
-            element={<WatchesDetails addToCart={addToCart} />}
-          />
-          <Route
-            path="/necklaces/:id"
-            element={<NecklaceDetails addToCart={addToCart} />}
-          />
-          <Route
-            path="/earrings/:id"
-            element={<EarringDetails addToCart={addToCart} />}
-          />
-          <Route path="/rings" element={<RingsIndex />} />
-          <Route path="/bracelets" element={<BraceletsIndex />} />
-          <Route path="/earrings" element={<EarringsIndex />} />
-          <Route path="/watches" element={<WatchesIndex />} />
-          <Route
-            path="/cart"
-            element={<Cart cartItems={cartItems} clearCart={clearCart} />}
-          />
-          <Route path="*" element={<Four0Four />} />
-        </Routes>
-      </Router>
+      <LoadingProvider>
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <Router>
+            <NavBar></NavBar>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route
+                path="/bracelets/:id"
+                element={<BraceletsDetails addToCart={addToCart} />}
+              />
+              <Route path="/necklaces" element={<NecklaceIndex />} />
+              <Route
+                path="/rings/:id"
+                element={<RingsDetails addToCart={addToCart} />}
+              />
+              <Route
+                path="/watches/:id"
+                element={<WatchesDetails addToCart={addToCart} />}
+              />
+              <Route
+                path="/necklaces/:id"
+                element={<NecklaceDetails addToCart={addToCart} />}
+              />
+              <Route
+                path="/earrings/:id"
+                element={<EarringDetails addToCart={addToCart} />}
+              />
+              <Route path="/rings" element={<RingsIndex />} />
+              <Route path="/bracelets" element={<BraceletsIndex />} />
+              <Route path="/earrings" element={<EarringsIndex />} />
+              <Route path="/watches" element={<WatchesIndex />} />
+              <Route
+                path="/cart"
+                element={<Cart cartItems={cartItems} clearCart={clearCart} />}
+              />
+              <Route path="*" element={<Four0Four />} />
+            </Routes>
+          </Router>
+        )}
+      </LoadingProvider>
     </div>
   );
 }
