@@ -56,3 +56,25 @@ a:hover {
   opacity: 0.7;
 }
 
+.cart-button img{
+  height: 50px;
+  background-color: #000000;
+}
+
+.cart-button button{
+  min-height: auto;
+}
+
+.cart-button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-top: -20px;
+}
+
+.cart-button img {
+  height: 50px;
+  margin-right: 10px;
+}
