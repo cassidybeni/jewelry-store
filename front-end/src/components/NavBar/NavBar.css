@@ -71,11 +71,11 @@ a:hover {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  margin-top: -20px;
+  margin-top: -12px;
 }
 
 .cart-button img {
-  height: 50px;
+  height: 35px;
   margin-right: 10px;
   background-color: transparent;
 }
