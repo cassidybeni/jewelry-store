@@ -77,4 +77,5 @@ a:hover {
 .cart-button img {
   height: 50px;
   margin-right: 10px;
+  background-color: transparent;
 }
