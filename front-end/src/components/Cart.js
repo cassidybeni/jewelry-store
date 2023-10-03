@@ -4,16 +4,15 @@ import "./Cart.css";
 
 function Cart({ cartItems, clearCart }) {
   let subtotal = 0;
-  let item = { cartItems };
-  if (item && item.price) {
-    let removeDollarSign = cartItems.item.price.replace("$", "");
+  cartItems.forEach((item) => {
+    let removeDollarSign = item.price.replace("$", "");
     let removeComma = removeDollarSign.replace(",", "");
     let price = parseFloat(removeComma);
 
     if (!isNaN(price)) {
-      subtotal += parseFloat(price);
+      subtotal += price;
     }
-  }
+  });
 
   let tax = subtotal * 0.08875;
   let total = subtotal + tax;
