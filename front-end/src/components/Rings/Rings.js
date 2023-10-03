@@ -23,13 +23,15 @@ function Rings() {
   }, []);
 
   return (
-    <div>
+    <div className="row">
       {isLoading ? (
         <div>
           <LoadingData></LoadingData>
         </div>
       ) : (
-        rings.map((ring, id) => <Ring key={ring.id} ring={ring} index={id} />)
+        rings.map((ring, id) => (
+          <Ring key={ring.id} ring={ring} index={id} />
+        ))
       )}
     </div>
   );
