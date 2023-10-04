@@ -2,7 +2,7 @@ import React from "react";
 import numeral from "numeral";
 import "./Cart.css";
 
-function Cart({ cartItems, clearCart }) {
+function Cart({ cartItems, removeItem }) {
   let subtotal = 0;
   cartItems.forEach((item) => {
     let removeDollarSign = item.price.replace("$", "");
@@ -27,12 +27,15 @@ function Cart({ cartItems, clearCart }) {
               <img src={item.image} alt={item.name}></img>
               <p>{item.name}</p>
               <p>{item.price}</p>
+              <button
+                className="delete-item-btn"
+                onClick={() => removeItem(item)}
+              >
+                X
+              </button>
             </li>
           ))}
         </ul>
-        <button className="empty-bag-btn" onClick={clearCart}>
-          Empty Bag
-        </button>
       </div>
 
       <div className="order-summary">

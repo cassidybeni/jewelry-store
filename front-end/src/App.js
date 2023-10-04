@@ -40,8 +40,9 @@ function App() {
     sessionStorage.setItem("cart", JSON.stringify(cartItems));
   }, [cartItems]);
 
-  const clearCart = () => {
-    setCartItems([]);
+  const removeItem = (itemToRemove) => {
+    const updatedCart = cartItems.filter((item) => item !== itemToRemove);
+    setCartItems(updatedCart);
   };
 
   useEffect(() => {
@@ -90,7 +91,7 @@ function App() {
               <Route path="/watches" element={<WatchesIndex />} />
               <Route
                 path="/cart"
-                element={<Cart cartItems={cartItems} clearCart={clearCart} />}
+                element={<Cart cartItems={cartItems} removeItem={removeItem} />}
               />
               <Route path="*" element={<Four0Four />} />
             </Routes>
