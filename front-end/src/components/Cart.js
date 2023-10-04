@@ -23,10 +23,12 @@ function Cart({ cartItems, removeItem }) {
         <h2 className="shopping-cart-heading">Shopping Bag</h2>
         <ul>
           {cartItems.map((item, index) => (
-            <li key={index}>
-              <img src={item.image} alt={item.name}></img>
-              <p>{item.name}</p>
-              <p>{item.price}</p>
+            <li key={index} className="cart-item">
+              <img src={item.image} alt={item.name} className="item-image" />
+              <div className="item-details">
+                <p className="item-name">{item.name}</p>
+                <p className="item-price">{item.price}</p>
+              </div>
               <button
                 className="delete-item-btn"
                 onClick={() => removeItem(item)}
@@ -41,10 +43,10 @@ function Cart({ cartItems, removeItem }) {
       <div className="order-summary">
         <h3>Order Summary</h3>
         <div>
-          <div>Subtotal: ${numeral(subtotal).format("0,0.00")}</div>
-          <div>Tax: ${numeral(tax).format("0,0.00")}</div>
-          <hr></hr>
-          <div>Total: ${numeral(total).format("0,0.00")}</div>
+          <div className="subtotal">Subtotal: ${numeral(subtotal).format("0,0.00")}</div>
+          <div className="tax">Tax: ${numeral(tax).format("0,0.00")}</div>
+          <hr />
+          <div className="total">Total: ${numeral(total).format("0,0.00")}</div>
         </div>
       </div>
     </div>

@@ -1,7 +1,6 @@
 .cart {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
   background-color: #ffdeb8;
   width: 800px;
   margin: 15% auto;
@@ -10,7 +9,6 @@
 
 .bag-items {
   flex: 1;
-  margin-right: 20px;
 }
 
 .bag-items ul {
@@ -18,43 +16,50 @@
   padding: 0;
 }
 
-.bag-items li {
+.cart-item {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  border: 1px solid black;
+  padding: 10px;
 }
 
-.bag-items img {
-  height: 200px;
+.item-image {
+  height: 100px;
   margin-right: 10px;
 }
 
-.bag-items p {
+.item-details {
+  flex: 1;
+}
+
+.item-name,
+.item-price {
   font-weight: bolder;
-  text-align: center;
-  margin: 0 25px 5px 25px;
+  text-align: left;
+  margin: 0;
 }
 
 .order-summary {
   flex: 1;
+  height: 150px;
   background-color: #ffdeb8;
   padding: 20px;
-  border: 1px solid #e6e6e6;
-  display: grid;
+  border: 1px solid black;
   align-items: center;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  border: 1px solid black;
-  margin-top: 5%;
-  
+  margin: 0 0 0 20px;
+  margin-top: 67px;
+  margin-bottom: 0;
 }
 
 .order-summary h3 {
   font-size: 24px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
 .order-summary div {
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 hr {
@@ -63,19 +68,14 @@ hr {
   width: 100%;
 }
 
-.empty-bag-btn {
+.delete-item-btn {
   color: #ffdeb8;
+  height: 30px;
+  width: 30px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   background-color: black;
-  border-radius: 2px;
-  height: 40px;
-  width: 30%;
   font-weight: bolder;
-  font-size: 16px;
+  font-size: 14px;
   border: none;
-  margin: 20px auto 0;
-}
-
-.shopping-cart-heading {
-  padding-left: 5px;
+  margin-left: auto;
 }
