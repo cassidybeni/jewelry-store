@@ -26,6 +26,7 @@
   margin-top: 75%;
   margin-left: 70px;
   margin-right: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .product-name {
@@ -58,6 +59,7 @@
   position: relative;
   margin-bottom: 5%;
 }
+
 
 @media screen and (max-width: 600px) {
   .column {
