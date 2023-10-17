@@ -9,10 +9,10 @@
 ![Home](./assets/homepage.gif)
 
 ## Index Page
-![Index](./assets/earrings.png)
+![Index](./assets/rings.png)
 
 ## Show Page
-![Details](./assets/ring.png)
+![Details](./assets/watch.png)
 
 ## Checkout Page
 ![Checkout](./assets/checkout.png)
