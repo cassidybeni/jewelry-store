@@ -5,9 +5,7 @@ const earringsController = require("./controllers/earringsController");
 const ringsController = require("./controllers/ringsController");
 const necklacesController = require("./controllers/necklacesController");
 const watchesController = require("./controllers/watchesController");
-const queryController = require("./controllers/queryController");
 const app = express();
-const axios = require("axios");
 
 app.use(cors());
 app.use(express.json());
@@ -21,27 +19,6 @@ app.use("/earrings", earringsController);
 app.use("/rings", ringsController);
 app.use("/necklaces", necklacesController);
 app.use("/watches", watchesController);
-
-app.get("/chat", async (req, res) => {
-  const userQuery = req.query.query;
-
-  if (userQuery.includes("rings")) {
-    axios
-      .get("https://jewelry-store-of44.onrender.com/rings")
-      .then((res) => {
-        const rings = res.data;
-        res.json({ res: rings });
-      })
-      .catch((e) => {
-        res.json({
-          res: "An error occurred while fetching ring data.",
-        });
-      });
-  } else {
-    const res = queryController.processQuery(userQuery);
-    res.json({ res });
-  }
-});
 
 app.get("*", (req, res) => {
   res.json({ error: "Page not found" });
