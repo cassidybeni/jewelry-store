@@ -5,6 +5,8 @@ const earringsController = require("./controllers/earringsController");
 const ringsController = require("./controllers/ringsController");
 const necklacesController = require("./controllers/necklacesController");
 const watchesController = require("./controllers/watchesController");
+const recommendationsController = require("./controllers/recommendationsController");
+
 const app = express();
 
 app.use(cors());
@@ -19,6 +21,7 @@ app.use("/earrings", earringsController);
 app.use("/rings", ringsController);
 app.use("/necklaces", necklacesController);
 app.use("/watches", watchesController);
+app.use("/recommendations", recommendationsController);
 
 app.get("*", (req, res) => {
   res.json({ error: "Page not found" });

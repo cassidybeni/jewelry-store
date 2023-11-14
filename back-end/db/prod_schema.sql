@@ -47,3 +47,11 @@ CREATE TABLE watches (
     details TEXT ARRAY,
     price TEXT
 );
+
+CREATE TABLE recommendations (
+    id SERIAL PRIMARY KEY,
+    source_product_name VARCHAR(255),
+    recommended_product_name VARCHAR(255),
+    rating FLOAT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
