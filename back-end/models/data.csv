@@ -1,0 +1,16 @@
+product_id,session_id,product_name,interaction,timestamp,category,rating
+1,1,Vine Hinged Bangle,view,2023-11-14 08:00:00,bracelets,0
+2,1,X Closed Narrow Hinged Bangle,view,2023-11-14 09:30:00,bracelets,0
+3,2,36 Stone Bracelet,view,2023-11-14 10:45:00,bracelets,0
+4,2,Olive Leaf Climber Earrings,add_to_cart,2023-11-14 12:15:00,earrings,1
+5,2,Tiffany Soleste® Earrings,view,2023-11-14 13:30:00,earrings,0
+6,3,Open Heart Stud Earrings,view,2023-11-14 14:45:00,earrings,0
+7,3,Graduated Link Necklace,view,2023-11-14 16:00:00,necklaces,0
+8,3,Diamonds by the Yard® Single Diamond Pendant,view,2023-11-14 17:15:00,necklaces,0
+9,3,Snake Necklace,add_to_cart,2023-11-14 18:30:00,necklaces,1
+10,4,Sixteen Stone Ring,add_to_cart,2023-11-14 21:00:00,rings,1
+11,4,Band Ring,view,2023-11-14 22:15:00,rings,0
+12,5,Makers 16 mm Square Watch,view,2023-11-14 23:30:00,watches,0
+13,5,2-Hand 24 mm Watch,view,2023-11-15 00:45:00,watches,0
+14,5,3-Hand 40 mm Watch,view,2023-11-15 02:00:00,watches,0
+15,6,V Ring,add_to_cart,2023-11-15 04:30:00,rings,1
