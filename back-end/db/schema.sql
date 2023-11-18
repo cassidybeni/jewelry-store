@@ -60,5 +60,4 @@ CREATE TABLE items (
     id SERIAL PRIMARY KEY,
     name TEXT,
     image TEXT,
-    added_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
