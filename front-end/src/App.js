@@ -49,9 +49,8 @@ function App() {
 
     try {
       await axios.delete(`${API}/cart/${itemToRemove.id}`);
-      console.log("Item removed from the cart table in the database.");
-    } catch (error) {
-      console.error("Error removing item from the cart table:", error);
+    } catch (e) {
+      console.error(e);
     }
   };
 
