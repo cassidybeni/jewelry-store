@@ -21,8 +21,8 @@ const getItem = async (id) => {
 const createItem = async (item) => {
   try {
     const newItem = await db.one(
-      "INSERT INTO items (name, image, description, details, price) VALUES ($1, $2, $3, $4, $5) RETURNING *",
-      [item.name, item.image, item.description, item.details, item.price]
+      "INSERT INTO items (product_name, added_at) VALUES ($1, $2) RETURNING *",
+      [item.product_name, item.added_at]
     );
     return newItem;
   } catch (e) {
@@ -45,8 +45,8 @@ const deleteItem = async (id) => {
 const updateItem = async (id, item) => {
   try {
     const updatedItem = await db.one(
-      "UPDATE items SET name=$1, image=$2, description=$3, details=$4, price=$5 WHERE id=$6 RETURNING *",
-      [item.name, item.image, item.description, item.details, item.price, id]
+      "UPDATE items SET product_name=$1, added_at=$2 WHERE id=$3 RETURNING *",
+      [item.product_name, item.added_at, id]
     );
     return updatedItem;
   } catch (e) {

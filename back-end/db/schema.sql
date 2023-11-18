@@ -55,3 +55,9 @@ CREATE TABLE recommendations (
     rating FLOAT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE items (
+    id SERIAL PRIMARY KEY,
+    product_name VARCHAR(255),
+    added_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
