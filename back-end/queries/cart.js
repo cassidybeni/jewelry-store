@@ -21,7 +21,7 @@ const getItem = async (id) => {
 const createItem = async (item) => {
   try {
     const newItem = await db.one(
-      "INSERT INTO items (name, image, added_at VALUES ($1, $2, $3, $4) RETURNING *",
+      "INSERT INTO items (name, image, added_at) VALUES ($1, $2, $3) RETURNING *",
       [item.name, item.image, item.added_at]
     );
     return newItem;
