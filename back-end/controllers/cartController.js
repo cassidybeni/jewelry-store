@@ -6,7 +6,7 @@ const {
   createItem,
   deleteItem,
   updateItem,
-} = require("../queries/items");
+} = require("../queries/cart");
 
 items.get("/", async (req, res) => {
   const allItems = await getAllItems();
