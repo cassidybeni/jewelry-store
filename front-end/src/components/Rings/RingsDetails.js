@@ -32,10 +32,19 @@ function RingsDetails({ addToCart }) {
     });
   };
 
-  const handleAddToCart = () => {
+  const handleAddToCart = async () => {
     addToCart(ring);
     notify();
-  };
+
+    try {
+      await axios.post(`${API}/cart`, {
+        name: ring.name,
+        image: ring.image,
+      });
+    } catch (e) {
+      console.error(e);
+    }
+  }
 
   return (
     <div className="product-container">

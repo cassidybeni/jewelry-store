@@ -59,5 +59,5 @@ CREATE TABLE recommendations (
 CREATE TABLE items (
     id SERIAL PRIMARY KEY,
     name TEXT,
-    image TEXT,
+    image TEXT
 );
