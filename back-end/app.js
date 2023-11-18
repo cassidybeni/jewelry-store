@@ -6,6 +6,7 @@ const ringsController = require("./controllers/ringsController");
 const necklacesController = require("./controllers/necklacesController");
 const watchesController = require("./controllers/watchesController");
 const recommendationsController = require("./controllers/recommendationsController");
+const cartController = require("./controllers/cartController");
 
 const app = express();
 
@@ -22,7 +23,7 @@ app.use("/rings", ringsController);
 app.use("/necklaces", necklacesController);
 app.use("/watches", watchesController);
 app.use("/recommendations", recommendationsController);
-
+app.use("/cart", cartController);
 app.get("*", (req, res) => {
   res.json({ error: "Page not found" });
 });

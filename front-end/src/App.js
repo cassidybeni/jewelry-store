@@ -13,7 +13,7 @@ import BraceletsDetails from "../src/components/Bracelets/BraceletDetails";
 import Four0Four from "./Pages/Four0Four/Four0Four";
 import NavBar from "./components/NavBar/NavBar";
 import { LoadingProvider } from "./components/Loading/LoadingContext";
-import Cart from "./components/Cart";
+import Cart from "./Pages/Cart/Cart";
 import Loading from "./components/Loading/Loading";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
