@@ -61,5 +61,4 @@ CREATE TABLE items (
     name TEXT,
     image TEXT,
     added_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    price TEXT
 );
