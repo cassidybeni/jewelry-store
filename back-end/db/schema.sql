@@ -58,6 +58,8 @@ CREATE TABLE recommendations (
 
 CREATE TABLE items (
     id SERIAL PRIMARY KEY,
-    product_name VARCHAR(255),
-    added_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    name TEXT,
+    image TEXT,
+    added_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    price TEXT
 );
