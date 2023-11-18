@@ -32,7 +32,8 @@ items.post("/", async (req, res) => {
     const item = await createItem(req.body);
     res.json(item);
   } catch (e) {
-    res.status(400).json({ error: e });
+    console.error(e);
+    res.status(400).json({ error: "error" });
   }
 });
 

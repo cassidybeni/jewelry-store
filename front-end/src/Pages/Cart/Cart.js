@@ -1,7 +1,6 @@
 import React from "react";
 import numeral from "numeral";
 import "./Cart.css";
-import Recommendations from "../../components/Recomendations/Recommendations";
 
 function Cart({ cartItems, removeItem }) {
   let subtotal = 0;
@@ -50,7 +49,6 @@ function Cart({ cartItems, removeItem }) {
           <div className="total">Total: ${numeral(total).format("0,0.00")}</div>
         </div>
       </div>
-      <Recommendations />
     </div>
   );
 }
