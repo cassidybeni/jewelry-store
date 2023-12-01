@@ -3,7 +3,7 @@
 
 [Live Site](https://hellskitchenice.netlify.app/)
 
-[Back-end](https://jewelry-store-of44.onrender.com/)
+[Back-end](https://hkice.adaptable.app/)
 
 ## Home Page
 ![Home](./assets/homepage.gif)
