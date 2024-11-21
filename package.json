@@ -17,9 +17,6 @@
     "url": "https://github.com/joinpursuit/pern-final-project/issues"
   },
   "homepage": "https://github.com/joinpursuit/pern-final-project#readme",
-  "devDependencies": {
-    "react-scripts": "^5.0.1"
-  },
   "dependencies": {
     "pg": "^8.11.3",
     "pg-promise": "^11.5.4",
