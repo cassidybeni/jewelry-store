@@ -15,6 +15,7 @@ import NavBar from "./components/NavBar/NavBar";
 import { LoadingProvider } from "./components/Loading/LoadingContext";
 import Cart from "./Pages/Cart/Cart";
 import Loading from "./components/Loading/Loading";
+import Footer from "./components/Footer/Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState, useEffect } from "react";
@@ -106,6 +107,7 @@ function App() {
                 />
                 <Route path="*" element={<Four0Four />} />
               </Routes>
+              <Footer />
             </Router>
             <ToastContainer />
           </>
