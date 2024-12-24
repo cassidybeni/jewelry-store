@@ -1,19 +1,21 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import Ring from "./Ring";
-import axios from "axios";
 import LoadingData from "../LoadingData/LoadingData";
-import "../List.css";
+import axios from "axios";
+import "../List.css"
+
 const API = process.env.REACT_APP_API;
 
 function Rings() {
-  const [rings, setRings] = useState([]);
+  const [ring, setRing] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     axios
       .get(`${API}/rings`)
       .then((res) => {
-        setRings(res.data);
+        setRing(res.data);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -21,17 +23,12 @@ function Rings() {
         setIsLoading(false);
       });
   }, []);
-
   return (
-    <div className="row">
+    <div className="cards-container">
       {isLoading ? (
-        <div>
-          <LoadingData></LoadingData>
-        </div>
+        <LoadingData />
       ) : (
-        rings.map((ring, id) => (
-          <Ring key={ring.id} ring={ring} index={id} />
-        ))
+        ring.map((ring, id) => <Ring key={ring.id} ring={ring} index={id} />)
       )}
     </div>
   );

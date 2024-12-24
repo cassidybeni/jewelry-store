@@ -1,19 +1,20 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import Earring from "./Earring";
-import axios from "axios";
 import LoadingData from "../LoadingData/LoadingData";
-import "../List.css";
+import axios from "axios";
+
 const API = process.env.REACT_APP_API;
 
 function Earrings() {
-  const [earrings, setEarrings] = useState([]);
+  const [earring, setEarring] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     axios
       .get(`${API}/earrings`)
       .then((res) => {
-        setEarrings(res.data);
+        setEarring(res.data);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -22,13 +23,11 @@ function Earrings() {
       });
   }, []);
   return (
-    <div>
+    <div className="cards-container">
       {isLoading ? (
-        <div>
-          <LoadingData></LoadingData>
-        </div>
+        <LoadingData />
       ) : (
-        earrings.map((earring, id) => (
+        earring.map((earring, id) => (
           <Earring key={earring.id} earring={earring} index={id} />
         ))
       )}

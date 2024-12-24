@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./NavBar.css";
-import shoppingBag from "./cart.png"
+import shoppingBag from "./cart.png";
 
 function NavBar() {
   const navigate = useNavigate();
@@ -21,7 +21,9 @@ function NavBar() {
         <Link to="/necklaces">Necklaces</Link>
         <Link to="/rings">Rings</Link>
         <Link to="/watches">Watches</Link>
-        <button onClick={goToCart} className="cart-button"><img src={shoppingBag} alt="Cart"></img></button>
+        <button onClick={goToCart} className="cart-button">
+          <img src={shoppingBag} alt="Cart" />
+        </button>
       </nav>
     </div>
   );

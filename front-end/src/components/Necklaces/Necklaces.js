@@ -1,19 +1,20 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import Necklace from "./Necklace";
 import LoadingData from "../LoadingData/LoadingData";
 import axios from "axios";
-import "../List.css";
+
 const API = process.env.REACT_APP_API;
 
 function Necklaces() {
-  const [necklaces, setNecklaces] = useState([]);
+  const [necklace, setNecklace] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     axios
       .get(`${API}/necklaces`)
       .then((res) => {
-        setNecklaces(res.data);
+        setNecklace(res.data);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -22,13 +23,11 @@ function Necklaces() {
       });
   }, []);
   return (
-    <div>
+    <div className="cards-container">
       {isLoading ? (
-        <div>
-          <LoadingData></LoadingData>
-        </div>
+        <LoadingData />
       ) : (
-        necklaces.map((necklace, id) => (
+        necklace.map((necklace, id) => (
           <Necklace key={necklace.id} necklace={necklace} index={id} />
         ))
       )}

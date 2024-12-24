@@ -8,7 +8,7 @@ function Home() {
     <div>
       <NavBar />
       <div className="header-container">
-        <img className="bottom-img" src={gif} alt="ice-box-gif"></img>
+        <img className="bottom-img" src={gif} alt="hk-gif"></img>
       </div>
     </div>
   );

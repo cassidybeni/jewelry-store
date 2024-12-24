@@ -23,11 +23,9 @@ function Bracelets() {
       });
   }, []);
   return (
-    <div>
+    <div className="cards-container">
       {isLoading ? (
-        <div>
-          <LoadingData></LoadingData>
-        </div>
+        <LoadingData />
       ) : (
         bracelets.map((bracelet, id) => (
           <Bracelet key={bracelet.id} bracelet={bracelet} index={id} />

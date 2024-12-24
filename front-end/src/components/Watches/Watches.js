@@ -1,19 +1,20 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import Watch from "./Watch";
-import axios from "axios";
 import LoadingData from "../LoadingData/LoadingData";
-import "../List.css";
+import axios from "axios";
+
 const API = process.env.REACT_APP_API;
 
 function Watches() {
-  const [watches, setWatches] = useState([]);
+  const [watch, setWatch] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     axios
       .get(`${API}/watches`)
       .then((res) => {
-        setWatches(res.data);
+        setWatch(res.data);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -21,15 +22,12 @@ function Watches() {
         setIsLoading(false);
       });
   }, []);
-
   return (
-    <div>
+    <div className="cards-container">
       {isLoading ? (
-        <div>
-          <LoadingData></LoadingData>
-        </div>
+        <LoadingData />
       ) : (
-        watches.map((watch, id) => (
+        watch.map((watch, id) => (
           <Watch key={watch.id} watch={watch} index={id} />
         ))
       )}
