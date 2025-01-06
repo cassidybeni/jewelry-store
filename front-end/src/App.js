@@ -32,7 +32,6 @@ function App() {
   };
 
   useEffect(() => {
-    // Load cart data from sessionStorage when the component mounts
     const cartFromSession = sessionStorage.getItem("cart");
     if (cartFromSession) {
       setCartItems(JSON.parse(cartFromSession));
@@ -40,7 +39,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // Save cart data to sessionStorage whenever it changes
     sessionStorage.setItem("cart", JSON.stringify(cartItems));
   }, [cartItems]);
 
@@ -56,13 +54,11 @@ function App() {
   };
 
   useEffect(() => {
-    // Simulate loading data for 3 seconds
     setTimeout(() => {
       setIsLoading(false);
     }, 3000);
   }, []);
 
-  //Wrap entire app with the LoadingProvider
   return (
     <div>
       <LoadingProvider>
@@ -71,42 +67,44 @@ function App() {
         ) : (
           <>
             <Router>
-              <NavBar></NavBar>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route
-                  path="/bracelets/:id"
-                  element={<BraceletsDetails addToCart={addToCart} />}
-                />
-                <Route path="/necklaces" element={<NecklaceIndex />} />
-                <Route
-                  path="/rings/:id"
-                  element={<RingsDetails addToCart={addToCart} />}
-                />
-                <Route
-                  path="/watches/:id"
-                  element={<WatchesDetails addToCart={addToCart} />}
-                />
-                <Route
-                  path="/necklaces/:id"
-                  element={<NecklaceDetails addToCart={addToCart} />}
-                />
-                <Route
-                  path="/earrings/:id"
-                  element={<EarringDetails addToCart={addToCart} />}
-                />
-                <Route path="/rings" element={<RingsIndex />} />
-                <Route path="/bracelets" element={<BraceletsIndex />} />
-                <Route path="/earrings" element={<EarringsIndex />} />
-                <Route path="/watches" element={<WatchesIndex />} />
-                <Route
-                  path="/cart"
-                  element={
-                    <Cart cartItems={cartItems} removeItem={removeItem} />
-                  }
-                />
-                <Route path="*" element={<Four0Four />} />
-              </Routes>
+              <NavBar />
+              <div className="main-content">
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route
+                    path="/bracelets/:id"
+                    element={<BraceletsDetails addToCart={addToCart} />}
+                  />
+                  <Route path="/necklaces" element={<NecklaceIndex />} />
+                  <Route
+                    path="/rings/:id"
+                    element={<RingsDetails addToCart={addToCart} />}
+                  />
+                  <Route
+                    path="/watches/:id"
+                    element={<WatchesDetails addToCart={addToCart} />}
+                  />
+                  <Route
+                    path="/necklaces/:id"
+                    element={<NecklaceDetails addToCart={addToCart} />}
+                  />
+                  <Route
+                    path="/earrings/:id"
+                    element={<EarringDetails addToCart={addToCart} />}
+                  />
+                  <Route path="/rings" element={<RingsIndex />} />
+                  <Route path="/bracelets" element={<BraceletsIndex />} />
+                  <Route path="/earrings" element={<EarringsIndex />} />
+                  <Route path="/watches" element={<WatchesIndex />} />
+                  <Route
+                    path="/cart"
+                    element={
+                      <Cart cartItems={cartItems} removeItem={removeItem} />
+                    }
+                  />
+                  <Route path="*" element={<Four0Four />} />
+                </Routes>
+              </div>
               <Footer />
             </Router>
             <ToastContainer />

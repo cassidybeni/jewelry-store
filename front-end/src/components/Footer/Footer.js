@@ -7,7 +7,7 @@ export class Footer extends Component {
       <div>
         <footer>
           <small>
-            Copyright © 2024 Hell's Kitchen Ice. All Rights Reserved.
+            Copyright © 2025 Hell's Kitchen Ice. All Rights Reserved.
           </small>
         </footer>
       </div>
